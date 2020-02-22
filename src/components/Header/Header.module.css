@@ -1,0 +1,41 @@
+.headerMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fa8072;
+  padding: 0 40px;
+}
+.logo a {
+  color: #fff;
+  font-family: "MontserratRegular", sans-serif;
+  letter-spacing: 0.1em;
+}
+.list {
+  display: flex;
+}
+/* .item:not(:last-child) {
+  margin: 0 20px 0 0;
+} */
+.list li:not(:last-child) {
+  margin: 0 20px 0 0;
+}
+.list a {
+  display: block;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: "MontserratRegular", sans-serif;
+  letter-spacing: 0.1em;
+}
+.list a:focus,
+.list a:hover {
+  transition: 0.2s;
+  background: #e96b5d;
+}
+
+.list a.activeLink {
+  transition: 0.2s;
+  background: #e96b5d;
+  box-shadow: 0px 0px 4px 0 #b84437 inset;
+}
