@@ -5,16 +5,35 @@ import "react-toastify/dist/ReactToastify.css";
 import styles from "./OneDayPage.module.css";
 import weatherSelectors from "../../redux/weather/weatherSelectors";
 import FormikMy from "../../components/Formik/Formik";
+import { AppStateType } from "../../redux/rootReducer";
 
 toast.configure();
 
-class OneDayPage extends Component {
+interface IWeather {
+  name: string;
+  main: { temp: number; feels_like: number };
+  clouds: { all: number };
+  weather: [
+    {
+      description: string;
+      icon: string;
+    }
+  ];
+  wind: { speed: number };
+}
+
+interface IProps {
+  error: null | object;
+  weather: null | IWeather;
+}
+
+class OneDayPage extends Component<IProps> {
   componentDidUpdate() {
     const { error } = this.props;
     if (error) this.notify();
   }
 
-  notify = () => {
+  notify = (): void => {
     toast.info("Попробуйте еще раз", {
       position: toast.POSITION.BOTTOM_RIGHT
     });
@@ -22,12 +41,14 @@ class OneDayPage extends Component {
 
   render() {
     const { weather } = this.props;
+
     return (
       <section className={styles.oneDay}>
         <div className={styles.container}>
           <h2 className={styles.title}>Weather one day</h2>
-
-          <FormikMy />
+          <div className={styles.formCont}>
+            <FormikMy />
+          </div>
 
           {weather && (
             <div>
@@ -57,7 +78,7 @@ class OneDayPage extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: AppStateType): object => ({
   weather: weatherSelectors.getOneDayWeather(state),
   error: weatherSelectors.error(state)
 });

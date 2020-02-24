@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
 import routes from "../../routes";
 
-const Header = () => (
+const Header: React.FC = () => (
   <header className={styles.headerMain}>
     <h1 className={styles.logo}>
       <Link to={routes.ONE_DAY_PAGE}>Logo</Link>

@@ -1,7 +1,7 @@
 import api from "../../servises/api";
 import weatherActions from "./weatherActions";
 
-const getWeatherOneDayThunk = city => dispatch => {
+const getWeatherOneDayThunk = (city: string) => (dispatch: any) => {
   dispatch(weatherActions.getWeatherOneStartAC());
 
   api
@@ -10,7 +10,7 @@ const getWeatherOneDayThunk = city => dispatch => {
     .catch(error => dispatch(weatherActions.getWeatherOneFailureAC(error)));
 };
 
-const getWeatherFiveDayThunk = city => dispatch => {
+const getWeatherFiveDayThunk = (city: string) => (dispatch: any) => {
   dispatch(weatherActions.getWeatherFiveStartAC());
 
   api

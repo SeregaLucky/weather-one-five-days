@@ -1,0 +1,29 @@
+.formWeather {
+  display: flex;
+  margin: 0 0 20px 0;
+}
+.formWeather input {
+  padding: 10px 20px;
+  border: none;
+  box-shadow: inset 0px 0px 0px 1px rgb(0, 0, 0, 0.5);
+  margin: 0 10px 0 0;
+  border-top-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  font-size: 17px;
+}
+.formWeather button {
+  padding: 10px 30px;
+  text-transform: uppercase;
+  border: none;
+  display: block;
+  background-color: cornflowerblue;
+  color: #fff;
+  font-family: "MontserratRegular", sans-serif;
+  border-top-right-radius: 32px;
+  border-bottom-left-radius: 32px;
+}
+.formWeather button:focus,
+.formWeather button:hover {
+  transition: 0.2s;
+  background-color: #4a7bd6;
+}
