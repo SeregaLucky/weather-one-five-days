@@ -1,8 +1,8 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import styles from "./FiveDaysList.module.css";
-import weatherS from "../../redux/weather/weatherSelectors";
-import { AppStateType } from "../../redux/rootReducer";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import styles from './FiveDaysList.module.css';
+import weatherS from '../../redux/weather/weatherSelectors';
+import { AppStateType } from '../../redux/rootReducer';
 
 interface IItem {
   dt: number;
@@ -14,7 +14,7 @@ type Weather = null | any;
 
 const FiveDaysList: React.FC = () => {
   const weather: Weather = useSelector((state: AppStateType) =>
-    weatherS.getFiveDayWeather(state)
+    weatherS.getFiveDayWeather(state),
   );
 
   return (
@@ -24,7 +24,7 @@ const FiveDaysList: React.FC = () => {
 
         <ul className={styles.list}>
           {weather.list.map((item: IItem) => (
-            <li className={styles.item}>
+            <li key={item.dt} className={styles.item}>
               <p>Date and time: {item.dt_txt}</p>
               <p>Temp: {Math.round(item.main.temp)}</p>
             </li>

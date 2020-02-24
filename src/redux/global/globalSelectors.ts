@@ -1,4 +1,4 @@
-import { AppStateType } from "../rootReducer";
+import { AppStateType } from '../rootReducer';
 
 const isLoading = (state: AppStateType) => state.global.loading;
 

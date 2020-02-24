@@ -10,7 +10,7 @@
   margin: 0 0 20px 0;
   text-align: center;
   text-transform: uppercase;
-  font-family: "MontserratRegular", sans-serif;
+  font-family: 'MontserratRegular', sans-serif;
   letter-spacing: 0.1em;
 }
 .formCont {
@@ -37,7 +37,7 @@
   display: block;
   background-color: cornflowerblue;
   color: #fff;
-  font-family: "MontserratRegular", sans-serif;
+  font-family: 'MontserratRegular', sans-serif;
   border-top-right-radius: 32px;
   border-bottom-left-radius: 32px;
 }

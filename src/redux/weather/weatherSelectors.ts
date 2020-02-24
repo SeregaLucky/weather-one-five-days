@@ -1,4 +1,4 @@
-import { AppStateType } from "../rootReducer";
+import { AppStateType } from '../rootReducer';
 
 const getOneDayWeather = (state: AppStateType) => state.weather.weatherOneDay;
 const getFiveDayWeather = (state: AppStateType) => state.weather.weatherFiveDay;

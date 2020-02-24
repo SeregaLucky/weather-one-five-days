@@ -1,5 +1,5 @@
-import api from "../../servises/api";
-import weatherActions from "./weatherActions";
+import api from '../../servises/api';
+import weatherActions from './weatherActions';
 
 const getWeatherOneDayThunk = (city: string) => (dispatch: any) => {
   dispatch(weatherActions.getWeatherOneStartAC());

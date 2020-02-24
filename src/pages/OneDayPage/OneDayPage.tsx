@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import styles from "./OneDayPage.module.css";
-import weatherSelectors from "../../redux/weather/weatherSelectors";
-import FormikMy from "../../components/Formik/Formik";
-import { AppStateType } from "../../redux/rootReducer";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import styles from './OneDayPage.module.css';
+import weatherSelectors from '../../redux/weather/weatherSelectors';
+import FormikMy from '../../components/Formik/Formik';
+import { AppStateType } from '../../redux/rootReducer';
 
 toast.configure();
 
@@ -17,7 +17,7 @@ interface IWeather {
     {
       description: string;
       icon: string;
-    }
+    },
   ];
   wind: { speed: number };
 }
@@ -34,8 +34,8 @@ class OneDayPage extends Component<IProps> {
   }
 
   notify = (): void => {
-    toast.info("Попробуйте еще раз", {
-      position: toast.POSITION.BOTTOM_RIGHT
+    toast.info('Попробуйте еще раз', {
+      position: toast.POSITION.BOTTOM_RIGHT,
     });
   };
 
@@ -55,12 +55,12 @@ class OneDayPage extends Component<IProps> {
               <p>City: {weather.name}</p>
               <p>
                 Temp:
-                {Math.floor(weather.main.temp)} or{" "}
+                {Math.floor(weather.main.temp)} or{' '}
                 {Math.ceil(weather.main.temp)}
               </p>
               <p>
                 Feels like:
-                {Math.floor(weather.main.feels_like)} or{" "}
+                {Math.floor(weather.main.feels_like)} or{' '}
                 {Math.ceil(weather.main.feels_like)}
               </p>
               <p>Cloud: {weather.clouds.all}%</p>
@@ -80,7 +80,7 @@ class OneDayPage extends Component<IProps> {
 
 const mapStateToProps = (state: AppStateType): object => ({
   weather: weatherSelectors.getOneDayWeather(state),
-  error: weatherSelectors.error(state)
+  error: weatherSelectors.error(state),
 });
 
 export default connect(mapStateToProps)(OneDayPage);

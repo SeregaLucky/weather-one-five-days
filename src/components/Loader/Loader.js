@@ -1,8 +1,8 @@
-import React from "react";
-import { createPortal } from "react-dom";
-import styles from "./Loader.module.css";
+import React from 'react';
+import { createPortal } from 'react-dom';
+import styles from './Loader.module.css';
 
-const LOADER_ROOT = document.querySelector("#loader-root");
+const LOADER_ROOT = document.querySelector('#loader-root');
 
 const Loader = () =>
   createPortal(
@@ -16,7 +16,7 @@ const Loader = () =>
         </div>
       </div>
     </div>,
-    LOADER_ROOT
+    LOADER_ROOT,
   );
 
 export default Loader;
