@@ -1,6 +1,5 @@
 .formWeather {
   display: flex;
-  margin: 0 0 20px 0;
 }
 .formWeather input {
   padding: 10px 20px;
@@ -10,6 +9,7 @@
   border-top-left-radius: 32px;
   border-bottom-right-radius: 32px;
   font-size: 17px;
+  width: 168px;
 }
 .formWeather button {
   padding: 10px 30px;
@@ -26,4 +26,13 @@
 .formWeather button:hover {
   transition: 0.2s;
   background-color: #4a7bd6;
+}
+
+@media screen and (min-width: 768px) {
+  .formWeather input {
+    width: 250px;
+  }
+  .formWeather button {
+    padding: 10px 50px;
+  }
 }

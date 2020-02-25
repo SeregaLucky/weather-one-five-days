@@ -28,6 +28,7 @@ const FiveDayPage: React.FC = () => {
 
   const sendForm = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
+    if (!city) return;
 
     dispatch(weatherOperations.getWeatherFiveDayThunk(city));
     setCity('');

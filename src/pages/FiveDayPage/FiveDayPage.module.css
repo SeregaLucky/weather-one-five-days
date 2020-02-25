@@ -16,10 +16,10 @@
 .formCont {
   display: flex;
   justify-content: center;
+  margin: 0 0 20px 0;
 }
 .formWeather {
   display: flex;
-  margin: 0 0 20px 0;
 }
 .formWeather input {
   padding: 10px 20px;
@@ -29,6 +29,7 @@
   border-top-left-radius: 32px;
   border-bottom-right-radius: 32px;
   font-size: 17px;
+  width: 168px;
 }
 .formWeather button {
   padding: 10px 30px;
@@ -49,12 +50,18 @@
 
 @media screen and (min-width: 768px) {
   .container {
-    width: 768px;
+    width: 748px;
+  }
+  .formWeather input {
+    width: 250px;
+  }
+  .formWeather button {
+    padding: 10px 50px;
   }
 }
 
 @media screen and (min-width: 1170px) {
   .container {
-    width: 1170px;
+    width: 1150px;
   }
 }
