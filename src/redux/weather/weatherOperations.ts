@@ -5,7 +5,7 @@ import weatherActions from './weatherActions';
 
 const getWeatherOneDayThunk = (city: string) => (
   dispatch: Dispatch<ACTypes>,
-): void => {
+) => {
   dispatch(weatherActions.getWeatherOneStartAC());
 
   api
@@ -16,7 +16,7 @@ const getWeatherOneDayThunk = (city: string) => (
 
 const getWeatherFiveDayThunk = (city: string) => (
   dispatch: Dispatch<ACTypes>,
-): void => {
+) => {
   dispatch(weatherActions.getWeatherFiveStartAC());
 
   api
