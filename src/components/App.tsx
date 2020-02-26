@@ -8,6 +8,7 @@ import Header from './Header/Header';
 import Loader from './Loader/Loader';
 import Footer from './Footer/Footer';
 import Layout from './Layout/Layout';
+import { AppStateType } from '../redux/rootReducer';
 
 const OneDayPage = lazy(() =>
   import('../pages/OneDayPage' /*webpackChunkName: "OneDayPage"*/),
@@ -16,7 +17,7 @@ const FiveDayPage = lazy(() =>
   import('../pages/FiveDayPage' /*webpackChunkName: "FiveDayPage"*/),
 );
 
-const App = ({ isLoading }) => (
+const App = ({ isLoading }: any) => (
   <BrowserRouter>
     <Header />
     {isLoading && <Loader />}
@@ -36,7 +37,7 @@ const App = ({ isLoading }) => (
   </BrowserRouter>
 );
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: AppStateType): object => ({
   isLoading: globalSelectors.isLoading(state),
 });
 
