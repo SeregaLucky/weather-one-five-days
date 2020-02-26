@@ -1,7 +1,11 @@
+import { Dispatch } from 'redux';
+import { ACTypes } from './weatherTypes';
 import api from '../../servises/api';
 import weatherActions from './weatherActions';
 
-const getWeatherOneDayThunk = (city: string) => (dispatch: any) => {
+const getWeatherOneDayThunk = (city: string) => (
+  dispatch: Dispatch<ACTypes>,
+): void => {
   dispatch(weatherActions.getWeatherOneStartAC());
 
   api
@@ -10,7 +14,9 @@ const getWeatherOneDayThunk = (city: string) => (dispatch: any) => {
     .catch(error => dispatch(weatherActions.getWeatherOneFailureAC(error)));
 };
 
-const getWeatherFiveDayThunk = (city: string) => (dispatch: any) => {
+const getWeatherFiveDayThunk = (city: string) => (
+  dispatch: Dispatch<ACTypes>,
+): void => {
   dispatch(weatherActions.getWeatherFiveStartAC());
 
   api
